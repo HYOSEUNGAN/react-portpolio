@@ -16,15 +16,23 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
-const navItems = ['블로그', '가이드', '이력서'];
+const navItems = [
+  { label: '블로그', url: 'https://brunch.co.kr/@d5f30e5f7e014d3' },
+  { label: '가이드', url: 'https://mui.com/material-ui/getting-started/templates/' },
+  { label: '이력', url: 'https://thirsty-cover-8c5.notion.site/3a6bbbe2b4f847cda43f8424b1bd23e0?pvs=4' },
+];
 
-const Header = (props) => {
-  const { window } = props;
+const Header = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  const handleNavItemClick = (url) => {
+    window.open(url, '_blank');
+  };
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -32,10 +40,10 @@ const Header = (props) => {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center', fontSize: 'bold' }}>
-              <ListItemText primary={item} />
+        {navItems.map((item, index) => (
+          <ListItem key={index} disablePadding>
+            <ListItemButton sx={{ textAlign: 'center', fontSize: 'bold' }} onClick={() => handleNavItemClick(item.url)}>
+              <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -43,7 +51,7 @@ const Header = (props) => {
     </Box>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
+  const container = window !== undefined ? () => window.document.body : undefined;
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -64,8 +72,8 @@ const Header = (props) => {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
+              <Button key={item.label} sx={{ color: '#fff' }} onClick={() => handleNavItemClick(item.url)}>
+                {item.label}
               </Button>
             ))}
           </Box>
