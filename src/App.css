@@ -46,7 +46,7 @@
   height: 100%;
   display: flex;
   flex-wrap: nowrap;
-  animation: bannermove-left 15s linear infinite;
+  animation: bannermove-left 20s linear infinite;
 }
 
 .image-box-left img {
@@ -58,7 +58,7 @@
   height: 100%;
   display: flex;
   flex-wrap: nowrap;
-  animation: bannermove-right 15s linear infinite;
+  animation: bannermove-right 20s linear infinite;
 }
 
 .image-box-right img {
