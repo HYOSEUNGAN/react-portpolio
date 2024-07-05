@@ -72,7 +72,7 @@ const Header = () => {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item.label} sx={{ color: '#fff' }} onClick={() => handleNavItemClick(item.url)}>
+              <Button key={item.label} sx={{ color: '#fff' }} onClick={() => handleNavItemClick(item.url)} style={{fontWeight:'600'}}>
                 {item.label}
               </Button>
             ))}

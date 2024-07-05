@@ -9,44 +9,76 @@
   width: 100%;
   margin: 0 auto;
 }
-.bg-color{
+.bg-color {
   background-color: #1976d2;
 }
-/* .App {
-  text-align: center;
+.changeColor {
+  /* color: linear-gradient(90deg, rgb(228, 51, 131), rgb(116, 47, 192)); */
+}
+.highlight {
+  display: inline;
+  box-shadow: inset 0 -10px 0 #d9fcdb;
+}
+.bg-gradient {
+  /* background: linear-gradient(#c7a2c5, #9198e5); */
+  background: linear-gradient(
+    to bottom right,
+    #ffffff 0%,
+    /* White at the top */ rgba(224, 230, 255, 0.6) 20%,
+    /* Very light blue */ rgba(173, 216, 230, 0.4) 40%,
+    /* Light blue */ rgba(135, 206, 250, 0.2) 60%,
+    /* Sky blue */ rgba(186, 85, 211, 0.1) 80%,
+    /* Medium orchid */ rgba(221, 160, 221, 0) 100% /* Plum */
+  );
+}
+#slider {
+  overflow: hidden;
+  position: relative;
+  /* border:20px solid red; */
+  width: 100%;
+  height: 150px;
+
+  /* padding :50px; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.image-box-left {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: nowrap;
+  animation: bannermove-left 15s linear infinite;
 }
 
-.App-link {
-  color: #61dafb;
+.image-box-left img {
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.image-box-right {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  animation: bannermove-right 15s linear infinite;
+}
+
+.image-box-right img {
+  padding: 20px;
+}
+
+@keyframes bannermove-left {
+  0% {
+    transform: translateX(0);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateX(-100%); /* 시작과 끝 연결을 위해 -100%로 수정 */
   }
-} */
+}
+
+@keyframes bannermove-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%); /* 시작과 끝 연결을 위해 100%로 수정 */
+  }
+}
