@@ -10,9 +10,11 @@
   margin: 0 auto;
 }
 .sub-max-width2 {
-  max-width: 1200px;
-
+  max-width: 1200px; /* 요소의 최대 너비를 1200px로 설정 */
+  width: 100%; /* 요소가 부모의 전체 너비를 차지하도록 설정 */
+  margin: 130px auto 0; /* 요소를 수평으로 가운데 정렬하고, 상단에 130px의 여백을 추가 */
 }
+
 .bg-color {
   background-color: #1976d2;
 }
