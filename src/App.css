@@ -9,6 +9,10 @@
   width: 100%;
   margin: 0 auto;
 }
+.sub-max-width2 {
+  max-width: 1200px;
+
+}
 .bg-color {
   background-color: #1976d2;
 }

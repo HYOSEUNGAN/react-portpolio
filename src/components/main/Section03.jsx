@@ -16,9 +16,9 @@ const Section03 = () => {
   return (
     <div className="w-100 mt-10">
       <div className="h-[800px] bg-gradient">
-        <p className="text-4xl font-bold pt-32 text-center">지난 작업 데이터</p>
+        <p className="text-4xl font-bold pt-32 text-center ">지난 작업 데이터</p>
 
-        <div className="flex justify-center gap-4 w-full mt-[130px]">
+        <div className="sub-max-width2   flex justify-center gap-4 w-full mt-[130px]">
           <div className="w-[30%] h-auto">
             <p className="text-center font-bold md:text-5xl text-xl mb-5 " style={{ color: '#6495ed' }}>
               + {useCountUp(20)}
